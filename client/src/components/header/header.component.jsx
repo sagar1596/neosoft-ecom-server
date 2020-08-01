@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import { createStructuredSelector } from 'reselect';
 
 import CartIcon from '../cart-icon/cart-icon.component';
@@ -8,7 +9,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { signOutStart } from '../../redux/user/user.actions';
 
-import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { ReactComponent as Logo1 } from '../../assets/logo.svg';
 
 import {
   HeaderContainer,
@@ -16,6 +17,13 @@ import {
   OptionsContainer,
   OptionLink
 } from './header.styles';
+
+const Logo = styled(Logo1)` 
+@media screen and (max-width: 800px) {
+  width: 105px;
+  height: 25px;
+}
+`
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
